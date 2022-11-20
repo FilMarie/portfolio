@@ -1,0 +1,338 @@
+$light: #F0EAE3;
+$dark: #262626;
+$badge: #BBA07D;
+
+//
+
+html {
+  scroll-behavior: smooth;
+}
+body {
+  margin: 0;
+}
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul, li {
+  list-style: none;
+}
+
+ul, li, p, h2, h4 {
+  margin: 0;
+}
+
+//
+
+body {
+  background-color: $dark;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 1280px;
+}
+
+.row {
+  display: flex;
+  flex-shrink: 0;
+  justify-content: center;
+}
+
+.a, h2, span, p {
+  color: $light;
+}
+
+a, p, h2, h4, button {
+  font-family: 'Gothic A1', sans-serif;
+}
+
+.text-uppercase {
+  text-transform: uppercase;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.flex {
+  display: flex;
+}
+.flex-start {
+  justify-content: flex-start;
+}
+
+.column {
+  flex-direction: column;
+}
+
+
+// this is illegal, i know
+body {
+  margin: auto;
+  max-width: 1920px;
+  background: linear-gradient(315deg, rgba(55,52,49,1) 0%, rgba(108,93,77,1) 50%)
+}
+
+// HEADER
+
+header {
+  background-image: url('../img/bg/header.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 948px;
+}
+
+nav {
+  padding: 20px;
+  background: linear-gradient(180deg, #4E433A 0%, rgba(54, 45, 41, 0) 100%);
+  .nav-container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-end;
+    max-width: 1560px;
+    margin: auto;
+    .navbar-brand {
+      margin-right: auto;
+    }
+  }
+  .navbar-nav {
+    display: flex;
+    margin-left: auto;
+    padding: 30px;
+    .nav {
+      &-link {
+        color: $light;
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 25px;
+        margin: 0 30px;
+        &:hover {
+          color: $badge!important;
+        }
+      }
+    }
+  }
+}
+
+
+//
+
+main {
+  width: 1920px;
+  position: relative;
+  box-shadow: 20px 20px 64px 0px black;
+  .content {
+    height: 5006px;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url('../img/bg/main.png');
+  }
+  .three-dots {
+    &:after {
+      position: relative;
+      top: 85px;
+      content: url("../icons/Dots.svg");
+    }
+  }
+  section {
+    padding-top: 75px;
+    padding-bottom: 100px;
+    .heading {
+      display: inline-block;
+      padding: 20px 50px;
+      background: linear-gradient(90deg, #726452 0%, #2A2524 120%);
+      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), inset 0px 4px 4px rgba(187, 160, 125, 0.5);
+      border-radius: 40px;
+      line-height: 25px;
+      font-size: 20px;
+    }
+    .row {
+      margin-top: 50px;
+      gap: 50px;
+      .portfolio-item {
+        position: relative;
+        display: inline-block;
+        width: 385px;
+        height: 265px;
+        img {
+          height: inherit;
+          width: inherit;
+        }
+        .review {
+          position: absolute;
+          left: 50%;
+          bottom: 0;
+          transform: translate(-50%, 50%);
+          font-weight: 900;
+          color: $light;
+          font-size: 18px;
+          border: 3px solid #BBA07D;
+          padding: 20px 50px;
+          background: #262626;
+          box-shadow: inset 2px 6px 6px rgba(38, 38, 38, 0.8);
+          border-radius: 20px;
+          &:hover {
+            cursor: pointer;
+          }
+        }
+      }
+      .tools {
+        display: flex;
+        gap: 100px;
+        height: 240px;
+        width: 240px;
+        img {
+          aspect-ratio: 1 / 1;
+        }
+      }
+    }
+
+    .software {
+      display: flex;
+      gap: 100px;
+      margin-top: 88px;
+    }
+
+
+    .card-container {
+      gap: 10px;
+      flex-wrap: wrap;
+      text-align: left;
+      margin-top: 100px;
+      .text-card {
+        width: 308px;
+        height: 220px;
+        flex-shrink: 0;
+        padding: 20px 36px;
+        background-color: #373431;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        border-radius: 20px;
+        .card-title, .card-body {
+          font-family: 'Gothic A1', sans-serif;
+          font-style: normal;
+          font-weight: 500;
+          font-size: 18px;
+          line-height: 30px;
+        }
+        .card-title {
+          color: #BBA07D;
+        }
+        .card-body {
+          color: $light
+        }
+      }
+    }
+  }
+}
+
+footer {
+  position: absolute;
+  left: 508px;
+  bottom: 180px;
+  .discovery {
+    display: flex;
+    align-items: center;
+    padding: 8px;
+    gap: 20px;
+    .discovery-links {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      .discovery-item {
+        display: flex;
+        align-items: center;
+        font-weight: 900;
+        font-size: 20px;
+        line-height: 30px;
+        span {
+          text-transform: uppercase;
+          margin-left: 25px;
+        }
+        img {
+          width: 38px;
+          height: 38px;
+          aspect-ratio: 1 / 1;
+        }
+      }
+    }
+    #qr-code {
+      width: 210px;
+      aspect-ratio: 1 / 1;
+    }
+  }
+}
+
+#slider {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 10;
+  background-color: rgba(0, 0, 0, 0.9);
+  #slides {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-y: auto;
+  }
+  .slide {
+    width: 100%;
+    height: auto;
+    display: none;
+    &.active {
+      display: block;
+    }
+  }
+  &.open {
+    display: grid;
+    grid-template-columns: 128px 1fr 128px;
+  }
+  #prev, #next, #close {
+    height: 100%;
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #BBA07D;
+    opacity: .7;
+    &:hover{
+      opacity: 1;
+    }
+  }
+  #close {
+    position: fixed;
+    z-index: 11;
+    height: 128px;
+    width: 128px;
+    top: 0;
+  }
+}
+
+::-webkit-scrollbar-track
+{
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+  border-radius: 10px;
+  background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar
+{
+  width: 4px;
+  height: 4px;
+  background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar-thumb
+{
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+  background-color: #555;
+}
