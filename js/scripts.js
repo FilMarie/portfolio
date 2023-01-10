@@ -39,7 +39,22 @@ function addSlideImageTags() {
   })
 }
 
-function showPrevSlide(){
+function setDisabledControls() {
+  const { currentSlideId } = window;
+  const prev = document.querySelector('#prev');
+  const next = document.querySelector('#next');
+  if (currentSlideId % 2 === 0) {
+    prev.classList.add('disabled');
+    next.classList.remove('disabled');
+
+  }
+  if ((currentSlideId + 1) % 2 === 0) {
+    next.classList.add('disabled');
+    prev.classList.remove('disabled');
+  }
+}
+
+function showPrevSlide() {
   const { currentSlideId } = window;
   let slide = document.querySelector(`[data-slide-id="${currentSlideId}"]`);
   slide.classList.remove('active');
@@ -54,9 +69,10 @@ function showPrevSlide(){
   window.currentSlideId = slideId;
   slide = document.querySelector(`[data-slide-id="${slideId}"]`);
   slide.classList.add('active');
+  setDisabledControls()
 }
 
-function showNextSlide(){
+function showNextSlide() {
   const { currentSlideId } = window;
   let slide = document.querySelector(`[data-slide-id="${currentSlideId}"]`);
   slide.classList.remove('active');
@@ -71,6 +87,7 @@ function showNextSlide(){
   window.currentSlideId = slideId;
   slide = document.querySelector(`[data-slide-id="${slideId}"]`);
   slide.classList.add('active');
+  setDisabledControls()
 }
 
 
@@ -80,6 +97,7 @@ function showNextSlide(){
   buttons.forEach((button, index) => {
     button.addEventListener('click', (e) => {
       openSliderModal(index * 2);
+      setDisabledControls();
     })
   })
 
